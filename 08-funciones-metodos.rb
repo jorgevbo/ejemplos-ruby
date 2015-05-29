@@ -60,3 +60,31 @@ puts '-------'
 
 alias :hi_someone :hola_alguien
 puts hi_someone('Jon Snow')
+
+# Definición de parametros
+#
+# Se pueden definir valores por defecto para los parametros que no hayan sido enviados en una función
+
+puts ''
+puts 'Valores por defecto'
+puts '---------------------'
+def saludo(nombre = 'mundo')
+  "Hola, #{nombre}"
+end
+
+puts saludo('Juan Perez')
+puts saludo
+
+# Es posible utilizar el operador * en el nombre del último parametro, para almacenar valores adicionales
+
+puts ''
+puts 'Comodín de parametros'
+puts '---------------------'
+def foo(bar, *params)
+  puts bar
+  params.each do |param|
+    puts "#{param}"
+  end
+end
+
+foo 'bar','lorem', 'ipsum', 'dolorem', 'sit', 'amet'
