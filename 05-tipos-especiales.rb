@@ -2,7 +2,7 @@
 # 
 # Algunos tipos de datos especiales en Ruby son: Rangos y Simbolos
 
-# Los rangos permiten declarar una lista de valores. Muy usandos en Iterables
+# Los rangos permiten declarar una lista de valores. Muy usados en Iterables y Enumerables
 puts 'Rangos'
 puts '---------'
 
@@ -28,7 +28,6 @@ puts '-----------------------'
 require 'date'
 hoy = Date.today
 (hoy..(hoy.next_month)).each {|dia| puts dia }
-# ... También se pueden incluir caracteres
 
 # Los simbolos principalmente se usan para definir llaves y parametros que no cambiaran en el tiempo
 # Se recomienda su uso como llaves para los Hash en vez de strings, debido a que utilizan el mismo
