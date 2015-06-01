@@ -40,3 +40,36 @@ end
 
 
 # PROC y Lambda
+# 
+# Las expresiones Lambda son instancias de objetos que permiten manipular bloques de código
+# para su posterior ejecución. A diferencia de yield, se debe llamar al metodo .call()
+# del objeto para que se ejecute el bloque
+# 
+puts ''
+puts 'Proc y Lambda'
+puts '------------------'
+
+# Instanciando un bloque de código
+prc = lambda { puts 'hola mundo' } # forma corta
+prc.call # se debe llamar a call para ejecutar las instrucciones
+
+saludo = lambda do    # Forma larga
+  puts 'Otro saludo'
+end
+saludo.call
+puts "saludo.class => #{saludo.class}"
+
+puts '----------------'
+# También se pueden definir parametros en el bloque
+prc_con_parametros = lambda { |nombre| puts "Hola, #{nombre}" }
+prc_con_parametros.call('John Smith')
+
+
+puts '----------------'
+# Al ser un objeto, se pueden manejar como una variable más
+def mi_metodo(bloque)
+  puts 'inicio'
+  bloque.call
+  puts 'fin'
+end
+mi_metodo(saludo)
