@@ -74,11 +74,11 @@ class Math2
   PI = 3.1416            # Definimos una constrante
   @@dato = 1             # Definimos un atributo de clase
 
-  def self.dato
+  def self.dato          # Definimos un metodo que nos permita acceder al singleton
     @@dato
   end
 
-  def self.dato=(val)
+  def self.dato=(val)    # Definimos un metodo que nos permite modificar el valor del singleton
     @@dato = val
   end
 
@@ -93,7 +93,7 @@ class Math2
 end
 
 puts Math2::PI      # Para llamar a una constante de una clase, se usa el operador ::
-puts Math2.dato     # Para llamar a un atributo de clase, se lo hace con el operador .
-Math2.dato += 1     # El atributo es un Singleton, por lo que pude maipularse'su valor a traves de toda la aplicación
+puts Math2.dato     # llamamos al metodo estatico para que retorne el valor del singleton
+Math2.dato += 1     # El atributo es un Singleton, por lo que pude manipularse'su valor a traves de toda la aplicación
 puts Math2.dato
 puts Math2.redondear(5.1587, 1) # Llamando a un método de clase
