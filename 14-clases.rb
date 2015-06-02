@@ -66,18 +66,34 @@ fido = nil
 # una instancia. Aunque, por metaprogramación, estos elementos son accesibles desde una instancia,
 # se desaconseja llamarlos de esa forma, para que el código pueda fácil de comprender
 
+puts ''
+puts 'Definición de metodos y atributos de clase'
+puts '--------------------------------------------'
 
 class Math2
   PI = 3.1416            # Definimos una constrante
-  @@valor = 1            # Definimos un atributo de clase
+  @@dato = 1             # Definimos un atributo de clase
 
-  def self.redondear(val, dec = 2)
+  def self.dato
+    @@dato
+  end
+
+  def self.dato=(val)
+    @@dato = val
+  end
+
+
+  def self.redondear(val, dec = 2)  # Definiendo un metodo de clase (self)
     val.round(dec)
   end
 
-  def metodo_de_instancia(valor)
-    self.redondear(valor)
+  def metodo_de_instancia(valor, dec)   # Definiendo un metodo de instancia
+    self.redondear(valor, dec)          # Llamando a un método de clase
   end
 end
 
- 
+puts Math2::PI      # Para llamar a una constante de una clase, se usa el operador ::
+puts Math2.dato     # Para llamar a un atributo de clase, se lo hace con el operador .
+Math2.dato += 1     # El atributo es un Singleton, por lo que pude maipularse'su valor a traves de toda la aplicación
+puts Math2.dato
+puts Math2.redondear(5.1587, 1) # Llamando a un método de clase
