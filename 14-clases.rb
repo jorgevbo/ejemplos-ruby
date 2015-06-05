@@ -97,3 +97,37 @@ puts Math2.dato     # llamamos al metodo estatico para que retorne el valor del 
 Math2.dato += 1     # El atributo es un Singleton, por lo que pude manipularse'su valor a traves de toda la aplicación
 puts Math2.dato
 puts Math2.redondear(5.1587, 1) # Llamando a un método de clase
+
+# Control de acceso
+# 
+# Los tipos de acceso aplicables en Ruby son: public, protected y private
+
+class Inventario
+  
+  def productos # Un metodo público, no necesita definición alguna
+  end
+
+  private       # Forma larga de definición por bloques.
+  def sustraer  # Todos los metodos definidos en adelante, serán privados
+  end
+
+  protected     # Hasta que se defina un nuevo bloque, en este caso, protected
+  def stock     # Metodo protegido, accesible desde clases derivadas
+  end
+end
+
+# Forma abreviadas de definición de control de Acceso
+class Inventario2
+  def productos
+  end
+
+  def sustraer
+  end
+
+  def stock
+  end
+
+  private :sustraer  # Se envia la lista de los nombres de metodos
+  protected :stock   # al bloque correspondiente
+end
+
