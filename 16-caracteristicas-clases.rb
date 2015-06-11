@@ -36,3 +36,5 @@ end
 
 c1 = Cuadrado.new(3)
 puts "Area de #{c1.to_s}: #{c1.area}"
+
+# Módulos
