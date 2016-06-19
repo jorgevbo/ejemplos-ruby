@@ -18,7 +18,9 @@ puts "el valor de a es: #{a}"
 puts "Un texto interpolado: #{ a >= 10000 ? 'Mayor o igual 10000' : 'Menor a 10000'}"
 
 # Un tipo de cadena especial se `` que hace llamadas al shell del sistema y devuelve la salida para ser manipulada
-puts `pwd`
+ruta = `pwd`
+puts ruta
+
 puts `ls -la`
 
 puts ''
@@ -44,4 +46,5 @@ hola['hola'] = 'Hi'
 puts hola
 
 # Mediante el operador '%' podemos hacer reemplazos de comodines en una cadena
-puts "hola %s" % 'mundo'
+nombre = 'Juan Perez'
+puts "Bienvenido, %s" % nombre

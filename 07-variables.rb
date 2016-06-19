@@ -14,6 +14,8 @@
 _mi_variable = 'var'
 contador_bucle = 10
 
+$a = 1 # Definimos como variable global
+
 # Si se desea definir una constante, esta debe iniciar con Mayuscula.
 # Por convención, todos los caracteres del nombre de una constante deben estar en Mayusculas. Ej:
 # ENV (OK)
